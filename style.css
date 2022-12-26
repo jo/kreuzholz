@@ -1,0 +1,108 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: monospace;
+  display: flex;
+  flex-direction: column;
+}
+
+header h1 {
+  line-height: 0.85;
+  font-weight: normal;
+}
+header h1 span {
+  color: red;
+}
+
+header, aside, main, footer, details {
+  padding: 1ex 1.5em 2ex 1.5em;
+}
+summary {
+  padding-bottom: 2ex;
+}
+
+
+.body {
+  display: flex;
+  flex: 1;
+}
+aside, main {
+  display: flex;
+  flex-direction: column;
+}
+aside {
+  max-width: 27vw;
+}
+main {
+  flex: 1;
+}
+details.full[open] {
+  flex: 1;
+}
+details {
+  border-bottom: 1px solid black;
+}
+details:last-child {
+  border-bottom: none;
+}
+summary {
+  cursor: default;
+  font-weight: bold;
+}
+
+
+label, input, select, output {
+  margin-right: 1em;
+}
+input[type=number] {
+  width: 4em;
+}
+output {
+  width: 3.5em;
+  display: inline-block;
+  text-align: right;
+}
+#layout-layer-form p {
+  display: flex;
+}
+#layout-layer-form input {
+  flex: 1;
+}
+select + img {
+  height: 4ex;
+}
+#layout-anschlag input {
+  width: 4em;
+}
+#layout-anschlag button {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+textarea {
+  height: 300px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+td, th {
+  border: 1px solid black;
+  padding: 1ex 1em;
+}
+
+canvas, svg {
+  height: 790px;
+  width: 100%;
+  border: 1px solid black;
+}
+
+  /*
+   * schäne Farbe, Tafelgrün: bbackground-color: #231;
+   * */

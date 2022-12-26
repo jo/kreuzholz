@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang=en>
+<head>
+  <meta charset=utf-8>
+  <title>Hashtagholz</title>
+  <meta name=description content="Raumholz - Furniture from laths.">
+  <meta name=viewport content=width=device-width,initial-scale=1>
+  <link rel=stylesheet href=./style.css>
+</head>
+<body>
+  <header>
+    <!--
+  <h1>R<span>A</span>U<span>M</span><br><span>H</span>O<span>L</span>Z</h1>
+  <h1>#olz</h1>
+    -->
+    <h1><img alt=#olz src=logo.svg></h1>
+  </header>
+  <div class=body>
+    <aside>
+      <details>
+        <summary id=design-form-details>Model</summary>
+        <form id=layout-design-form></form>
+      </details>
+      <details id=code-details>
+        <summary>Code</summary>
+        <div id=layout-code></div>
+      </details>
+      <details open id=params-form-details>
+        <summary>Parameters</summary>
+        <form id=layout-params-form></form>
+      </details>
+      <details open id=stats-details>
+        <summary>Stats</summary>
+        <div id=layout-stats></div>
+      </details>
+      <details open id=layer-form-details>
+        <summary>Layer</summary>
+        <form id=layout-layer-form></form>
+      </details>
+      <details open class=full id=bom-details>
+        <summary>BOM</summary>
+        <div id=layout-bom></div>
+      </details>
+      <details open id=anschlag-details>
+        <summary>Anschlag</summary>
+        <div id=layout-anschlag></div>
+      </details>
+    </aside>
+    <main>
+      <details class=full id=view-details>
+        <summary>3D</summary>
+        <canvas id=layout-view></canvas>
+      </details>
+      <details class=full id=plan-details>
+        <summary>Plan</summary>
+        <svg id=layout-plan></svg>
+      </details>
+      <details open class=full id=table-details>
+        <summary>Laths</summary>
+        <div id=layout-table></div>
+      </details>
+    </main>
+  </div>
+  <footer>
+    <p>&copy; 2021 by Johannes J Schmidt TF</p>
+  </footer>
+  <script src=./vendor/d3.v6.min.js></script>
+  <script src=./vendor/three.js></script>
+  <script src=./vendor/OrbitControls.js></script>
+  <script type=module>
+    import { App } from './App.js'
+    const designForm = document.getElementById('layout-design-form')
+    const paramsForm = document.getElementById('layout-params-form')
+    const layerForm = document.getElementById('layout-layer-form')
+    const bom = document.getElementById('layout-bom')
+    const stats = document.getElementById('layout-stats')
+    const table = document.getElementById('layout-table')
+    const code = document.getElementById('layout-code')
+    const view = document.getElementById('layout-view')
+    const plan = document.getElementById('layout-plan')
+    const anschlag = document.getElementById('layout-anschlag')
+    window.app = new App({
+      layout: {
+        designForm,
+        paramsForm,
+        layerForm,
+        bom,
+        table,
+        stats,
+        code,
+        view,
+        plan,
+        anschlag
+      }
+    })
+    window.app.init()
+  </script>
+</body>
+</html>
